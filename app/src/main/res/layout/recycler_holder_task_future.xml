@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.a202316startproject.taskfuture.VMTaskFuture" />
+        <variable
+            name="data"
+            type="com.example.a202316startproject.taskfuture.FormatDataSetTaskFuture" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_margin="5dp"
+        android:padding="10dp"
+
+        android:background="@{data.backColor}">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/task"
+
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+
+                android:singleLine="true"
+                android:text="@{data.task}"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:gravity="center"
+
+                />
+
+            <TextView
+                android:id="@+id/date"
+
+                android:layout_width="0dp"
+                android:layout_weight="0.4"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="2.5dp"
+
+                android:text="@{data.date}"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+
+                />
+
+            <TextView
+                android:id="@+id/time"
+
+                android:layout_width="0dp"
+                android:layout_weight="0.4"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="2.5dp"
+
+                android:text="@{data.time}"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+
+                />
+
+            <Button
+                android:id="@+id/button"
+
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_margin="2.5dp"
+
+                android:background="@drawable/ic_baseline_more_vert_24"
+
+                android:onClick="@{() -> viewModel.clickOptionButton(data)}" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
